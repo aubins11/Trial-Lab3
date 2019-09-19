@@ -21,8 +21,7 @@ public class AddressBook {
 	 * @param address
 	 * @param phoneNumber
 	 */
-	public void addBuddy(String name, String address, String phoneNumber) {
-		BuddyInfo bud = new BuddyInfo(name, address, phoneNumber);
+	public void addBuddy(BuddyInfo bud) {
 		this.addressBook.add(bud);
 	}
 	
@@ -42,9 +41,8 @@ public class AddressBook {
 		// TODO Auto-generated method stub
 
 		AddressBook addressBook = new AddressBook();
-		
-		addressBook.addBuddy("Noah", "Canada", "613...");
-		
-		addressBook.addBuddy("Liya", "Canada", "437...");
+		BuddyInfo buddy =  new BuddyInfo("Noah", "Canada", "613...");
+		addressBook.addBuddy(buddy);
+		addressBook.removeBuddy(buddy);
 	}
 }
