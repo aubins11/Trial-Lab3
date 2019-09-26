@@ -34,11 +34,8 @@ public class AddressBook {
 	 * 
 	 * @param bud
 	 */
-	public BuddyInfo removeBuddy(int index) {
-		if (index >= 0 && index < this.addressBook.size()) {
-			return this.addressBook.remove(index);
-		}
-		return null;
+	public void removeBuddy(BuddyInfo bud) {
+		this.addressBook.remove(bud);
 	}
 	
 	/**
@@ -51,6 +48,6 @@ public class AddressBook {
 		AddressBook addressBook = new AddressBook();
 		BuddyInfo buddy =  new BuddyInfo("Noah", "Canada", "613...");
 		addressBook.addBuddy(buddy);
-		addressBook.removeBuddy(0);
+		addressBook.removeBuddy(buddy);
 	}
 }
