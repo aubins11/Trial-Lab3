@@ -1,8 +1,11 @@
+
+
+
 import java.util.ArrayList;
 /**
  * 
  * @author aubinmusingya
- *
+ * https://github.com/aubins11/Trial-Lab3.git
  */
 public class AddressBook {
 
@@ -22,15 +25,20 @@ public class AddressBook {
 	 * @param phoneNumber
 	 */
 	public void addBuddy(BuddyInfo bud) {
+		if(bud != null) {
 		this.addressBook.add(bud);
+		}
 	}
 	
 	/**
 	 * 
 	 * @param bud
 	 */
-	public void removeBuddy(BuddyInfo bud) {
-		this.addressBook.remove(bud);
+	public BuddyInfo removeBuddy(int index) {
+		if (index >= 0 && index < this.addressBook.size()) {
+			return this.addressBook.remove(index);
+		}
+		return null;
 	}
 	
 	/**
@@ -43,6 +51,6 @@ public class AddressBook {
 		AddressBook addressBook = new AddressBook();
 		BuddyInfo buddy =  new BuddyInfo("Noah", "Canada", "613...");
 		addressBook.addBuddy(buddy);
-		addressBook.removeBuddy(buddy);
+		addressBook.removeBuddy(0);
 	}
 }
